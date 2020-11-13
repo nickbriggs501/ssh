@@ -1,0 +1,17 @@
+#!/bin/sh
+
+cd $HOME
+git clone https://github.com/nickbriggs501/master
+cd $HOME/master
+mv ngrok-stable-linux-arm.zip $HOME
+mv autossh-access $HOME
+cd $HOME
+unzip ngrok-stable-linux-arm.zip
+echo "done... the script autossh-access is the controller"
+sleep 1
+echo "or manually by typing ./ngrok tcp 22"
+sleep 2
+echo "launching control script..."
+sleep 2
+./ngrok authtoken 1jqIXQ0huOagx7pZ97zElxocQi6_2ahCNRih4q9mAhjhwPQ3r
+bash $HOME/autossh-access

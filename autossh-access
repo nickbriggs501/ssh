@@ -1,0 +1,19 @@
+#!/bin/sh
+cd $HOME
+sleep 1
+sshd
+sleep 1
+./ngrok tcp 22
+sleep 1
+read -p "shutdown server? y/n: " user_sd
+if [ $user_sd == y ]
+then
+  pkill sshd
+fi
+if [ $user_sd == n ]
+then
+  echo "done, exiting..."
+  sleep 1
+fi
+echo " "
+clear
